@@ -1,10 +1,14 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ratelimitapi
-
+  labels:
+    app: ratelimitapi
 spec:
-  replicas: 1
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ratelimitapi
   template:
     metadata:
       labels:
@@ -13,7 +17,5 @@ spec:
       containers:
       - name: ratelimitapi
         image: jit2600/ratelimitapi:latest
-        imagePullPolicy: "Always"
         ports:
         - containerPort: 5000
-  
