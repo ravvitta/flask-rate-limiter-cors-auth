@@ -21,11 +21,11 @@ def slow():
 @app.route("/medium")
 @limiter.limit("1/second", override_defaults=False)
 def medium():
-    return ":||"
+    return ":|"
 
 @app.route("/fast")
 def fast():
-    return ":))"
+    return ":)"
 
 @app.route("/ping")
 @limiter.exempt

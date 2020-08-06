@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: ratelimitapi
-        image: jit2600/ratelimitapi:latest
+        image: jit2600/ciapiapp:latest
         ports:
         - containerPort: 5000
